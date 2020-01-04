@@ -10,3 +10,5 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['functions', 'deploy', 'sms', '--trigger-http', '--runtime', 'nodejs10', '--entry-point', 'fromTwilio']
   dir: 'functions/autodeploy'
+
+  twilio phone-numbers:update "+12075187653" --sms-url="http://localhost:8080"
