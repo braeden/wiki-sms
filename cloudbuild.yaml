@@ -1,6 +1,6 @@
 steps:
 - name: gcr.io/cloud-builders/git
-  args: ['clone', 'https://source.cloud.google.com/wiki-sms/github_braeden_wiki-sms']
+  args: ['clone', 'https://github.com/braeden/wiki-sms']
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['functions', 'deploy', 'sms', '--trigger-http', '--runtime', 'nodejs10', '--entry-point', 'fromTwilio']
   dir: 'functions/autodeploy'
