@@ -1,6 +1,10 @@
 steps:
-- name: gcr.io/cloud-builders/git
-  args: ['clone', 'https://github.com/braeden/wiki-sms']
+- name: 'gcr.io/cloud-builders/yarn'
+  args: ['install']
+  dir: 'functions/autodeploy'
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['test']
+  dir: 'functions/autodeploy'
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['functions', 'deploy', 'sms', '--trigger-http', '--runtime', 'nodejs10', '--entry-point', 'fromTwilio']
   dir: 'functions/autodeploy'
