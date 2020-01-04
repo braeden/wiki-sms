@@ -4,6 +4,8 @@ Provides an easy way to get Wikipedia summaries when not connected to mobile dat
 
 Text using syntax `wiki:"search term here"` and you'll get a summary and an article link in response!
 
+Libraries: wikijs+twilio
+
 # Local Testing 
 
 ```

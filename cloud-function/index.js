@@ -1,7 +1,7 @@
 const Wiki = require('wikijs').default
 const wiki = Wiki()
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
-const regex = /wiki: ?"(.+)"/gi
+const regex = /wiki: ?["']?([[A-Za-z0-9\s]+)["'\s]?/gi
 
 exports.fromTwilio = async (req, res) => {
     const twiml = new MessagingResponse();
